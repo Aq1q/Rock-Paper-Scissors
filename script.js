@@ -55,8 +55,6 @@ function game() {
             computerScore++;
         }
     }
-    console.log(playerScore);
-    console.log(computerScore);
 
     if (computerScore > playerScore) {
         console.log("Computer wins this game!");
