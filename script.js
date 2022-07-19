@@ -30,6 +30,7 @@ function round(playerSelection, computerSelection) {
     } else if (playerSelection === "paper" && computerSelection === "Scissors") {
         winner = "You Lose! Scissors beats Paper";
     return winner;
+    }
 }
 
 //game
@@ -65,4 +66,5 @@ function game() {
         console.log("It's a Draw!");
     }
 }
+
 game();
