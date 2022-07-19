@@ -38,7 +38,7 @@ function game() {
     let playerSelection;
     let computerSelection;
     let computerScore = 0, playerScore = 0;
-    let result;
+    let result = "";
     
     for (let i = 0; i < 5; i++) {
         playerSelection = window.prompt("Rock, Paper, Scissors");
