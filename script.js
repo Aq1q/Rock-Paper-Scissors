@@ -1,5 +1,7 @@
 //game
 
+
+//this function takes a random value and assigns rock, paper or scissors to it
 function getComputerChoice() {
     let computerChoice;
     let choice = Math.floor((Math.random()*3)) + 1;
@@ -21,7 +23,7 @@ function getPlayerChoice() {
 }
 
 
-//round
+// This function checks who won and returns winner 
 function round(playerSelection, computerSelection) {
     
     computerSelection = computerSelection.toLowerCase();
@@ -44,30 +46,8 @@ function round(playerSelection, computerSelection) {
     return winner;
 }
 
-
-function game() {
-    let playerSelection;
-    let computerSelection;
-    let computerScore = 0, playerScore = 0;
-    let result = "";
-
-    
-    for (let i = 0; i < 5; i++) {
-        playerSelection = getPlayerChoice();
-        computerSelection = getComputerChoice();
-        result = round(playerSelection, computerSelection);
-        console.log(result);
-
-        if (result.includes("Win!", 0)) {
-            playerScore++;
-        } else if(result.includes("Lose!", 0)) {
-            computerScore++;
-        } else {
-            playerScore++;
-            computerScore++;
-        }
-    }
-    
+// This function announces final winner
+function announceResult(playerScore, computerScore) {
     if (computerScore > playerScore) {
         console.log("Computer wins this game!");
     } else if (computerScore < playerScore) {
@@ -75,6 +55,33 @@ function game() {
     } else {
         console.log("It's a Draw!");
     }
+}
+
+function game() {
+    let playerSelection;
+    let computerSelection;
+    let computerScore = 0, playerScore = 0;
+    let point = "";
+
+    
+    for (let i = 0; i < 5; i++) {
+        playerSelection = getPlayerChoice();
+        computerSelection = getComputerChoice();
+        point = round(playerSelection, computerSelection);
+        console.log(point);
+
+        if (point.includes("Win!", 0)) {
+            playerScore++;
+        } else if(point.includes("Lose!", 0)) {
+            computerScore++;
+        } else {
+            playerScore++;
+            computerScore++;
+        }
+    }
+
+    announceResult(playerScore, computerScore);
+    
 }
 
 game();
