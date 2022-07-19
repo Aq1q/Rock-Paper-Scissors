@@ -29,8 +29,8 @@ function round(playerSelection, computerSelection) {
         winner = "You Win! Rock beats Scissors";
     } else if (playerSelection === "paper" && computerSelection === "Scissors") {
         winner = "You Lose! Scissors beats Paper";
-    return winner;
     }
+    return winner;
 }
 
 //game
@@ -43,7 +43,7 @@ function game() {
     for (let i = 0; i < 5; i++) {
         playerSelection = window.prompt("Rock, Paper, Scissors");
         computerSelection = getComputerChoice();
-        result = round(playerSelection, computerSelection);
+        console.log (round(playerSelection, computerSelection));
         console.log(result);
 
         if (result.includes("Win")) {
